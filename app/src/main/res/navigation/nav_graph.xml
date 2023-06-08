@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/stats">
+
+
+    <fragment
+        android:id="@+id/newReviewFragment"
+        android:name="com.example.demondex.NewReviewFragment"
+        android:label="fragment_new_review"
+        tools:layout="@layout/fragment_new_review" />
+    <fragment
+        android:id="@+id/showReviewFragment"
+        android:name="com.example.demondex.ShowReviewFragment"
+        android:label="fragment_show_review"
+        tools:layout="@layout/fragment_show_review" />
+    <fragment
+        android:id="@+id/recyclerReviewsFragment"
+        android:name="com.example.demondex.RecyclerReviewsFragment"
+        android:label="fragment_recycler_reviews"
+        tools:layout="@layout/fragment_recycler_reviews" >
+        <action
+            android:id="@+id/action_recyclerReviewsFragment_to_newReviewFragment"
+            app:destination="@id/newReviewFragment" />
+        <action
+            android:id="@+id/action_recyclerReviewsFragment_to_showReviewFragment"
+            app:destination="@id/showReviewFragment" />
+    </fragment>
+
+    <action
+    android:id="@+id/action_recyclerReviewsFragment_to_showReviewFragment"
+    app:destination="@id/showReviewFragment" />
+    <action
+        android:id="@+id/action_recyclerReviewsFragment_to_newReviewFragment"
+        app:destination="@id/newReviewFragment" />
+    <fragment
+        android:id="@+id/stats"
+        android:name="com.example.demondex.Items"
+        android:label="fragment_stats"
+        tools:layout="@layout/fragment_stats" />
+</navigation>
